@@ -12,4 +12,10 @@ class BaseTextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 20,
   );
+
+  static const appBarDropDownActionStyle = TextStyle(
+    color: AppColors.textPrimary,
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
+  );
 }

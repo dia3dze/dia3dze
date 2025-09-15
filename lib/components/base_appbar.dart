@@ -32,22 +32,76 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: AppColors.primary,
       actions: [
-        TextButton(
-          onPressed: () {},
-          child: Text("About Me", style: BaseTextStyles.appBarActionStyle),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Text("Projects", style: BaseTextStyles.appBarActionStyle),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Text("Resume", style: BaseTextStyles.appBarActionStyle),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Text("Skills", style: BaseTextStyles.appBarActionStyle),
-        ),
+        if (MediaQuery.of(context).size.width > 600) ...[
+          TextButton(
+            onPressed: () {},
+            child: Text("About Me", style: BaseTextStyles.appBarActionStyle),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("Projects", style: BaseTextStyles.appBarActionStyle),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("Resume", style: BaseTextStyles.appBarActionStyle),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text("Contact", style: BaseTextStyles.appBarActionStyle),
+          ),
+        ] else ...[
+          MenuAnchor(
+            builder: (context, controller, child) {
+              return IconButton(
+                icon: const Icon(
+                  Icons.menu_rounded,
+                  color: AppColors.background,
+                ),
+                onPressed: () {
+                  controller.open();
+                },
+              );
+            },
+            menuChildren: [
+              MenuItemButton(
+                onPressed: () {
+                  // Handle About Me
+                },
+                child: Text(
+                  "About Me",
+                  style: BaseTextStyles.appBarDropDownActionStyle,
+                ),
+              ),
+              MenuItemButton(
+                onPressed: () {
+                  // Handle Projects
+                },
+                child: Text(
+                  "Projects",
+                  style: BaseTextStyles.appBarDropDownActionStyle,
+                ),
+              ),
+              MenuItemButton(
+                onPressed: () {
+                  // Handle Resume
+                },
+                child: Text(
+                  "Resume",
+                  style: BaseTextStyles.appBarDropDownActionStyle,
+                ),
+              ),
+              MenuItemButton(
+                onPressed: () {
+                  // Handle Contact
+                },
+                child: Text(
+                  "Contact",
+                  style: BaseTextStyles.appBarDropDownActionStyle,
+                ),
+              ),
+            ],
+          ),
+        ],
       ],
     );
   }
