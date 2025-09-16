@@ -6,7 +6,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   const BaseAppBar({super.key});
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight); // default appbar height.
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   build(BuildContext context) {
@@ -37,84 +37,54 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: AppColors.primary,
       actions: [
-        if (MediaQuery.of(context).size.width > 600) ...[
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/about_me');
-            },
-            child: Text("About Me", style: BaseTextStyles.appBarActionStyle),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/projects');
-            },
-            child: Text("Projects", style: BaseTextStyles.appBarActionStyle),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/resume');
-            },
-            child: Text("Resume", style: BaseTextStyles.appBarActionStyle),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/contact');
-            },
-            child: Text("Contact", style: BaseTextStyles.appBarActionStyle),
-          ),
-        ] else ...[
-          MenuAnchor(
-            builder: (context, controller, child) {
-              return IconButton(
-                icon: const Icon(
-                  Icons.menu_rounded,
-                  color: AppColors.background,
-                ),
-                onPressed: () {
-                  controller.open();
-                },
-              );
-            },
-            menuChildren: [
-              MenuItemButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/about_me');
-                },
-                child: Text(
-                  "About Me",
-                  style: BaseTextStyles.appBarDropDownActionStyle,
-                ),
+        MenuAnchor(
+          builder: (context, controller, child) {
+            return IconButton(
+              icon: const Icon(Icons.menu_rounded, color: AppColors.background),
+              onPressed: () {
+                controller.open();
+              },
+            );
+          },
+          menuChildren: [
+            MenuItemButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/about_me');
+              },
+              child: Text(
+                "About Me",
+                style: BaseTextStyles.appBarDropDownActionStyle,
               ),
-              MenuItemButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/projects');
-                },
-                child: Text(
-                  "Projects",
-                  style: BaseTextStyles.appBarDropDownActionStyle,
-                ),
+            ),
+            MenuItemButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/projects');
+              },
+              child: Text(
+                "Projects",
+                style: BaseTextStyles.appBarDropDownActionStyle,
               ),
-              MenuItemButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/resume');
-                },
-                child: Text(
-                  "Resume",
-                  style: BaseTextStyles.appBarDropDownActionStyle,
-                ),
+            ),
+            MenuItemButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/resume');
+              },
+              child: Text(
+                "Resume",
+                style: BaseTextStyles.appBarDropDownActionStyle,
               ),
-              MenuItemButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/contact');
-                },
-                child: Text(
-                  "Contact",
-                  style: BaseTextStyles.appBarDropDownActionStyle,
-                ),
+            ),
+            MenuItemButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+              child: Text(
+                "Contact",
+                style: BaseTextStyles.appBarDropDownActionStyle,
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ],
     );
   }
