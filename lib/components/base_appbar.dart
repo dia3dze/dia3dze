@@ -12,41 +12,54 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      title: Row(
-        children: [
-          SizedBox(
-            width: 50,
-            height: 50,
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColors.background, width: 2),
-              ),
-              child: CircleAvatar(
-                backgroundImage: AssetImage('../../assets/images/icon.png'),
+      title: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/');
+        },
+        child: Row(
+          children: [
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: AppColors.background, width: 2),
+                ),
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('../../assets/images/icon.png'),
+                ),
               ),
             ),
-          ),
-          Text(" DIA3DZE", style: BaseTextStyles.appBarTitleStyle),
-        ],
+            Text(" DIA3DZE", style: BaseTextStyles.appBarTitleStyle),
+          ],
+        ),
       ),
       backgroundColor: AppColors.primary,
       actions: [
         if (MediaQuery.of(context).size.width > 600) ...[
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/about_me');
+            },
             child: Text("About Me", style: BaseTextStyles.appBarActionStyle),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/projects');
+            },
             child: Text("Projects", style: BaseTextStyles.appBarActionStyle),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/resume');
+            },
             child: Text("Resume", style: BaseTextStyles.appBarActionStyle),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/contact');
+            },
             child: Text("Contact", style: BaseTextStyles.appBarActionStyle),
           ),
         ] else ...[
@@ -65,7 +78,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             menuChildren: [
               MenuItemButton(
                 onPressed: () {
-                  // Handle About Me
+                  Navigator.pushNamed(context, '/about_me');
                 },
                 child: Text(
                   "About Me",
@@ -74,7 +87,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               MenuItemButton(
                 onPressed: () {
-                  // Handle Projects
+                  Navigator.pushNamed(context, '/projects');
                 },
                 child: Text(
                   "Projects",
@@ -83,7 +96,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               MenuItemButton(
                 onPressed: () {
-                  // Handle Resume
+                  Navigator.pushNamed(context, '/resume');
                 },
                 child: Text(
                   "Resume",
@@ -92,7 +105,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               MenuItemButton(
                 onPressed: () {
-                  // Handle Contact
+                  Navigator.pushNamed(context, '/contact');
                 },
                 child: Text(
                   "Contact",
