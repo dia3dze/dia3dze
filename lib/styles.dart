@@ -35,3 +35,12 @@ class BaseTextStyles {
 class BaseIconStyles {
   static const double drawerActionSize = 28;
 }
+
+class BaseLayout {
+  static const double drawerWidth = 250;
+  static const double drawerDividerWidth = 5;
+  static const double drawerLogoSize = 200;
+  static const double drawerLogoBorderWidth = 2.0;
+  static const double drawerTopPaddingFactor = 0.05;
+  static const double drawerItemSpacing = 8.0;
+}
