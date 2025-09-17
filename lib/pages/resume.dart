@@ -6,6 +6,6 @@ class ResumePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(child: Text("Resume Page"));
+    return BasePage(children: []);
   }
 }

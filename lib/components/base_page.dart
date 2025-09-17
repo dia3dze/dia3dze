@@ -1,22 +1,29 @@
+import 'package:dia3dze/styles.dart';
 import 'package:flutter/material.dart';
-import '../components/base_appbar.dart';
-import '../components/base_drawer.dart';
-import '../constants.dart';
+import 'package:dia3dze/components/base_appbar.dart';
+import 'package:dia3dze/components/base_drawer.dart';
+import 'package:dia3dze/constants.dart';
 
 class BasePage extends StatelessWidget {
-  final Widget child;
-  const BasePage({super.key, required this.child});
+  final List<Widget> children;
+  const BasePage({super.key, required this.children});
 
   @override
   Widget build(BuildContext context) {
-    final bool isDesktop = MediaQuery.of(context).size.width > 900;
+    final bool isDesktop =
+        MediaQuery.of(context).size.width > BaseLayout.desktopBreakPoint;
 
     if (isDesktop) {
       return Scaffold(
         body: Row(
           children: [
             BaseDrawer(),
-            Expanded(child: child),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: children,
+              ),
+            ),
           ],
         ),
         backgroundColor: AppColors.background,
@@ -24,7 +31,10 @@ class BasePage extends StatelessWidget {
     } else {
       return Scaffold(
         appBar: BaseAppBar(),
-        body: child,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: children,
+        ),
         backgroundColor: AppColors.background,
       );
     }

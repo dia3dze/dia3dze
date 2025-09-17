@@ -6,6 +6,6 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(child: Text("Contact Page"));
+    return BasePage(children: []);
   }
 }

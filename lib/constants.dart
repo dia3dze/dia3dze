@@ -12,7 +12,7 @@ class AppColors {
   static const background = Color.fromRGBO(245, 245, 245, 1);
   static const surface = Color.fromRGBO(255, 255, 255, 1);
 
-  static const textPrimary = Color.fromRGBO(33, 33, 33, 1);
+  static const textPrimary = Color.fromRGBO(68, 68, 68, 1.0);
   static const textSecondary = Color.fromRGBO(117, 117, 117, 1);
 
   static const accent = Color.fromRGBO(255, 193, 7, 1);

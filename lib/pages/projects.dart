@@ -6,6 +6,6 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(child: Text("Projects Page"));
+    return BasePage(children: []);
   }
 }

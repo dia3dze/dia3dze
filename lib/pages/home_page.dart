@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../components/base_page.dart';
 
@@ -6,6 +8,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(child: Center(child: Text("Home Page")));
+    return BasePage(children: [Text('hello')]);
   }
 }

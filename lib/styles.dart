@@ -37,6 +37,7 @@ class BaseIconStyles {
 }
 
 class BaseLayout {
+  static const double desktopBreakPoint = 900;
   static const double drawerWidth = 250;
   static const double drawerDividerWidth = 5;
   static const double drawerLogoSize = 200;
