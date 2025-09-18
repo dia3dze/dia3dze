@@ -7,20 +7,27 @@ class Paragraph extends StatelessWidget {
   final double size;
   final Color color;
   final double lineHeight;
+  final EdgeInsetsGeometry margin;
 
   const Paragraph({
     super.key,
     required this.text,
     this.size = MarkdownStyles.baseFontSize,
     this.color = MarkdownStyles.textColor,
-    this.lineHeight = 1.5,
+    this.lineHeight = MarkdownStyles.lineHeight,
+    this.margin = const EdgeInsets.symmetric(
+      vertical: MarkdownStyles.paragraphSpacing,
+    ),
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(fontSize: size, color: color, height: lineHeight),
+    return Container(
+      margin: margin,
+      child: Text(
+        text,
+        style: TextStyle(fontSize: size, color: color, height: lineHeight),
+      ),
     );
   }
 }
@@ -28,6 +35,7 @@ class Paragraph extends StatelessWidget {
 class Header extends StatelessWidget {
   final String label;
   final int level;
+
   const Header({super.key, required this.label, required this.level});
 
   @override
@@ -50,12 +58,18 @@ class Header extends StatelessWidget {
         fontSize = 14;
         break;
     }
-    return Text(
-      label,
-      style: TextStyle(
-        fontSize: fontSize,
-        fontWeight: FontWeight.bold,
-        color: AppColors.textPrimary,
+
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        vertical: MarkdownStyles.headerSpacing,
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.bold,
+          color: AppColors.textPrimary,
+        ),
       ),
     );
   }

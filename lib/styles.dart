@@ -71,7 +71,7 @@ class HeaderStyles {
 
 class BasePageStyles {
   static const double verticalPadding = 10;
-  static const double horizontalPaddingPercent = 0.05;
+  static const double horizontalPaddingPercent = 0.1;
 
   static const double maxContentWidth = 1200;
 
@@ -90,6 +90,11 @@ class MarkdownStyles {
   static const double bulletTopMargin = 0.3;
   static const double itemSpacing = 0.4;
   static const double bulletTextSpacing = 0.5;
+
+  static const double paragraphSpacing = 8.0;
+  static const double lineHeight = 1.5;
+
+  static const double headerSpacing = 12.0;
 
   static const Color textColor = AppColors.textPrimary;
 }
