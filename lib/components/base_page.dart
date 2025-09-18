@@ -12,18 +12,42 @@ class BasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isDesktop =
-        MediaQuery.of(context).size.width > BaseLayout.desktopBreakPoint;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final bool isDesktop = screenWidth > BaseLayout.desktopBreakPoint;
 
     if (isDesktop) {
       return Scaffold(
         body: Row(
           children: [
-            BaseDrawer(),
+            const BaseDrawer(),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Header(), ...children, Footer()],
+                children: [
+                  const Header(),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal:
+                              screenWidth *
+                              BasePageStyles.horizontalPaddingPercent,
+                          vertical: BasePageStyles.verticalPadding,
+                        ),
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: BasePageStyles.maxContentWidth,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: children,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Footer(),
+                ],
               ),
             ),
           ],
@@ -32,10 +56,32 @@ class BasePage extends StatelessWidget {
       );
     } else {
       return Scaffold(
-        appBar: BaseAppBar(),
+        appBar: const BaseAppBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [...children, Footer()],
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal:
+                        screenWidth * BasePageStyles.horizontalPaddingPercent,
+                    vertical: BasePageStyles.verticalPadding,
+                  ),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: BasePageStyles.maxContentWidth,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: children,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const Footer(),
+          ],
         ),
         backgroundColor: AppColors.background,
       );

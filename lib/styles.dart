@@ -66,3 +66,17 @@ class HeaderStyles {
 
   static const double clockIconSize = 16;
 }
+
+class BasePageStyles {
+  static const double verticalPadding = 10;
+  static const double horizontalPaddingPercent = 0.05;
+
+  static const double maxContentWidth = 1200;
+
+  static const double contentSpacing = 10;
+
+  static const double iconTextSpacing = 4;
+  static const double locationTimeSpacing = 8;
+  static const double clockTextSpacing = 4;
+  static const double clockIconSize = 16;
+}
