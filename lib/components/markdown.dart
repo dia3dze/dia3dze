@@ -1,5 +1,29 @@
 import 'package:dia3dze/constants.dart';
+import 'package:dia3dze/styles.dart';
 import 'package:flutter/material.dart';
+
+class Paragraph extends StatelessWidget {
+  final String text;
+  final double size;
+  final Color color;
+  final double lineHeight;
+
+  const Paragraph({
+    super.key,
+    required this.text,
+    this.size = MarkdownStyles.baseFontSize,
+    this.color = MarkdownStyles.textColor,
+    this.lineHeight = 1.5,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(fontSize: size, color: color, height: lineHeight),
+    );
+  }
+}
 
 class Header extends StatelessWidget {
   final String label;
@@ -33,6 +57,53 @@ class Header extends StatelessWidget {
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
       ),
+    );
+  }
+}
+
+class UnorderedList extends StatelessWidget {
+  final List<String> items;
+  final double size;
+  final Color color;
+
+  const UnorderedList({
+    super.key,
+    required this.items,
+    this.size = MarkdownStyles.baseFontSize,
+    this.color = MarkdownStyles.textColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final bulletSize = size * MarkdownStyles.bulletScale;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: items.map((item) {
+        return Padding(
+          padding: EdgeInsets.only(bottom: size * MarkdownStyles.itemSpacing),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: bulletSize,
+                height: bulletSize,
+                margin: EdgeInsets.only(
+                  top: size * MarkdownStyles.bulletTopMargin,
+                ),
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+              ),
+              SizedBox(width: size * MarkdownStyles.bulletTextSpacing),
+              Expanded(
+                child: Text(
+                  item,
+                  style: TextStyle(fontSize: size, color: color),
+                ),
+              ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }

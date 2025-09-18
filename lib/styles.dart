@@ -2,6 +2,8 @@ import 'package:dia3dze/constants.dart';
 import 'package:flutter/material.dart';
 
 class BaseTextStyles {
+  static const double baseFontSize = 14;
+
   static const appBarTitleStyle = TextStyle(
     color: AppColors.background,
     fontWeight: FontWeight.w700,
@@ -79,4 +81,15 @@ class BasePageStyles {
   static const double locationTimeSpacing = 8;
   static const double clockTextSpacing = 4;
   static const double clockIconSize = 16;
+}
+
+class MarkdownStyles {
+  static const double baseFontSize = BaseTextStyles.baseFontSize;
+
+  static const double bulletScale = 0.4;
+  static const double bulletTopMargin = 0.3;
+  static const double itemSpacing = 0.4;
+  static const double bulletTextSpacing = 0.5;
+
+  static const Color textColor = AppColors.textPrimary;
 }
