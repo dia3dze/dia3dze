@@ -7,7 +7,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Padding(
@@ -30,7 +30,11 @@ class Header extends StatelessWidget {
                 children: const [
                   Icon(Icons.public),
                   SizedBox(width: 4),
-                  Text('Georgia, Tbilisi.'),
+                  Text('Georgia, Tbilisi'),
+                  SizedBox(width: 8),
+                  Icon(Icons.access_time, size: 16),
+                  SizedBox(width: 4),
+                  Text('UTC+4'),
                 ],
               ),
             ],

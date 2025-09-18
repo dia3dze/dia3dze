@@ -54,3 +54,15 @@ class BaseButtonStyles {
     elevation: WidgetStatePropertyAll(2.5),
   );
 }
+
+class HeaderStyles {
+  static const double topPadding = 10;
+  static const double bottomPadding = 5;
+  static const double horizontalPaddingPercent = 0.05;
+
+  static const double iconTextSpacing = 4;
+  static const double locationTimeSpacing = 8;
+  static const double clockTextSpacing = 4;
+
+  static const double clockIconSize = 16;
+}

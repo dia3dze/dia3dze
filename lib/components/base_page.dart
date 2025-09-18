@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:dia3dze/components/base_appbar.dart';
 import 'package:dia3dze/components/base_drawer.dart';
 import 'package:dia3dze/components/header.dart';
+import 'package:dia3dze/components/footer.dart';
 import 'package:dia3dze/constants.dart';
 
 class BasePage extends StatelessWidget {
@@ -22,7 +23,7 @@ class BasePage extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Header(), ...children],
+                children: [Header(), ...children, Footer()],
               ),
             ),
           ],
@@ -34,7 +35,7 @@ class BasePage extends StatelessWidget {
         appBar: BaseAppBar(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [...children],
+          children: [...children, Footer()],
         ),
         backgroundColor: AppColors.background,
       );
