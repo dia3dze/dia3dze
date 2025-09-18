@@ -7,8 +7,9 @@ class AppColors {
 
   static const secondary = Color.fromRGBO(255, 87, 34, 1);
   static const secondaryLight = Color.fromRGBO(255, 138, 80, 1);
-  static const secondaryDark = Color.fromRGBO(216, 67, 21, 1);
+  static const secondaryDark = Color.fromRGBO(231, 76, 60, 1);
 
+  static const surfaceDark = Color.fromRGBO(200, 200, 200, 1);
   static const background = Color.fromRGBO(245, 245, 245, 1);
   static const surface = Color.fromRGBO(255, 255, 255, 1);
 

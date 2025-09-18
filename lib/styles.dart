@@ -45,3 +45,12 @@ class BaseLayout {
   static const double drawerTopPaddingFactor = 0.05;
   static const double drawerItemSpacing = 8.0;
 }
+
+class BaseButtonStyles {
+  static const ButtonStyle downloadResumeStyle = ButtonStyle(
+    backgroundColor: WidgetStatePropertyAll(AppColors.primaryLight),
+    foregroundColor: WidgetStatePropertyAll(AppColors.textPrimary),
+    padding: WidgetStatePropertyAll(EdgeInsets.all(15)),
+    elevation: WidgetStatePropertyAll(2.5),
+  );
+}
