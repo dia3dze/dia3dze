@@ -98,3 +98,9 @@ class MarkdownStyles {
 
   static const Color textColor = AppColors.textPrimary;
 }
+
+class FooterStyles {
+  static const double topHeight = 50;
+  static const double bottomHeight = 150;
+  static const double padding = 16;
+}
