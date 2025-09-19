@@ -77,30 +77,40 @@ class BaseDrawer extends StatelessWidget {
                   ),
                 ),
               ),
-              const DrawerDivider(),
-              _drawerButton(
-                context,
-                route: '/about_me',
-                icon: Icons.person_2,
-                label: 'About Me',
-              ),
-              _drawerButton(
-                context,
-                route: '/projects',
-                icon: Icons.work,
-                label: 'Projects',
-              ),
-              _drawerButton(
-                context,
-                route: '/resume',
-                icon: Icons.description,
-                label: 'Resume',
-              ),
-              _drawerButton(
-                context,
-                route: '/contact',
-                icon: Icons.mail,
-                label: 'Contact',
+              Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: BaseLayout.drawerActionsPaddingLeft,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const DrawerDivider(),
+                    _drawerButton(
+                      context,
+                      route: '/about_me',
+                      icon: Icons.person_2,
+                      label: 'About Me',
+                    ),
+                    _drawerButton(
+                      context,
+                      route: '/projects',
+                      icon: Icons.work,
+                      label: 'Projects',
+                    ),
+                    _drawerButton(
+                      context,
+                      route: '/resume',
+                      icon: Icons.description,
+                      label: 'Resume',
+                    ),
+                    _drawerButton(
+                      context,
+                      route: '/contact',
+                      icon: Icons.mail,
+                      label: 'Contact',
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

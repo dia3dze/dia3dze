@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BasePage(
       children: [
-        Header(label: "Hello, my name is saba.", level: 1),
+        Header(label: "Hello, I'm saba.", level: 1),
         Header(label: "I'm a computer Engineer.", level: 2),
         Divider(),
         Header(label: "📍Georgia, tbilisi", level: 4),
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
         ),
         Paragraph(
           text:
-              "This website is both a way to practice my programming skills and a place to document my most meaningful projects, focusing on the areas I’m most interested in pursuing further.",
+              "This website is both a way to practice my programming skills and a place to document my most meaningful projects, focusing on the areas I’m most interested in pursuing further developments.",
         ),
         Divider(),
         Header(label: "Skills", level: 4),

@@ -2,7 +2,7 @@ import 'package:dia3dze/constants.dart';
 import 'package:flutter/material.dart';
 
 class BaseTextStyles {
-  static const double baseFontSize = 14;
+  static const double baseFontSize = 16;
 
   static const appBarTitleStyle = TextStyle(
     color: AppColors.background,
@@ -46,6 +46,7 @@ class BaseLayout {
   static const double drawerLogoBorderWidth = 2.0;
   static const double drawerTopPaddingFactor = 0.05;
   static const double drawerItemSpacing = 8.0;
+  static const double drawerActionsPaddingLeft = 50.0;
 }
 
 class BaseButtonStyles {
@@ -71,7 +72,7 @@ class HeaderStyles {
 
 class BasePageStyles {
   static const double verticalPadding = 10;
-  static const double horizontalPaddingPercent = 0.1;
+  static const double horizontalPaddingPercent = 0.13;
 
   static const double maxContentWidth = 1200;
 
@@ -101,6 +102,6 @@ class MarkdownStyles {
 
 class FooterStyles {
   static const double topHeight = 50;
-  static const double bottomHeight = 150;
+  static const double bottomHeight = 100;
   static const double padding = 16;
 }
