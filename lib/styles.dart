@@ -72,7 +72,7 @@ class HeaderStyles {
 
 class BasePageStyles {
   static const double verticalPadding = 10;
-  static const double horizontalPaddingPercent = 0.13;
+  static const double horizontalPaddingPercent = 0.15;
 
   static const double maxContentWidth = 1200;
 
@@ -104,4 +104,9 @@ class FooterStyles {
   static const double topHeight = 50;
   static const double bottomHeight = 100;
   static const double padding = 16;
+}
+
+class PdfStyles {
+  static const double heightFraction = 0.8;
+  static const double widthFraction = 0.95;
 }

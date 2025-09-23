@@ -31,6 +31,16 @@
 
   <title>dia3dze</title>
   <link rel="manifest" href="manifest.json">
+
+
+  <!-- Hand configured assets -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.216/pdf.min.js"></script>
+  <script>
+    if (window['pdfjsLib']) {
+      window['pdfjsLib'].GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.216/pdf.worker.min.js';
+    }
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
