@@ -1,6 +1,8 @@
 import 'package:dia3dze/constants.dart';
 import 'package:dia3dze/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart' as html;
+import 'package:flutter/services.dart' show rootBundle;
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -21,7 +23,7 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: downloadResume,
                 icon: const Icon(Icons.download),
                 label: const Text('Download Resume'),
                 style: BaseButtonStyles.downloadResumeStyle,
@@ -43,5 +45,17 @@ class Header extends StatelessWidget {
         Divider(color: AppColors.surfaceDark),
       ],
     );
+  }
+
+  void downloadResume() async {
+    final bytes = await rootBundle.load('assets/docs/resume.pdf');
+    final pdfBytes = bytes.buffer.asUint8List();
+
+    final blob = html.Blob([pdfBytes], 'application/pdf');
+    final url = html.Url.createObjectUrlFromBlob(blob);
+    final anchor = html.AnchorElement(href: url)
+      ..setAttribute('download', 'resume.pdf')
+      ..click();
+    html.Url.revokeObjectUrl(url);
   }
 }
