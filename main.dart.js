@@ -49743,7 +49743,7 @@ A.x_.prototype={
 l(a){var s=this.a
 return"BaseDeviceInfo{data: "+s.l(s)+"}"}}
 A.Q0.prototype={
-S(a){var s=null,r=t.p,q=A.jd(s,A.e4(A.b([A.cT(A.cp(s,new A.Qy(new A.tf("../../assets/images/icon.png",s,s),s),B.p,s,s,new A.cK(s,s,A.pl(B.cr,2),s,s,s,B.da),s,s,s,s,s,s,s),50,50),A.cd(" DIA3DZE",s,s,s,B.a0w,s,s)],r),B.H,s,B.S,B.M),B.ag,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.ab1(a),s,s,s,s,s,s,!1,B.bv)
+S(a){var s=null,r=t.p,q=A.jd(s,A.e4(A.b([A.cT(A.cp(s,new A.Qy(new A.tf("assets/images/icon.png",s,s),s),B.p,s,s,new A.cK(s,s,A.pl(B.cr,2),s,s,s,B.da),s,s,s,s,s,s,s),50,50),A.cd(" DIA3DZE",s,s,s,B.a0w,s,s)],r),B.H,s,B.S,B.M),B.ag,!1,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,s,new A.ab1(a),s,s,s,s,s,s,!1,B.bv)
 r=A.b([new A.G3(A.b([A.amf(A.cd("About Me",s,s,s,B.kj,s,s),new A.ab2(a)),A.amf(A.cd("Projects",s,s,s,B.kj,s,s),new A.ab3(a)),A.amf(A.cd("Resume",s,s,s,B.kj,s,s),new A.ab4(a)),A.amf(A.cd("Contact",s,s,s,B.kj,s,s),new A.ab5(a))],r),new A.ab6(),s)],r)
 return new A.CR(!1,q,r,B.qb,new A.a3P(s,s,1/0,56),s)}}
 A.ab1.prototype={
